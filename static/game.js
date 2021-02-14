@@ -17,12 +17,13 @@ document.getElementById("done").onclick = function() {
 	document.getElementById("done").disabled = true;
 	document.getElementById("draw").disabled = false;
 	turn = 1 - turn
-	document.getElementById("turn").textContent = players[turn] + "\'s turn to ask!";
+	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 }; 
 
 document.getElementById("draw").onclick = function() { 
 	document.getElementById("draw").disabled = true;
 	document.getElementById("done").disabled = false;
+	document.getElementById("turn") = players[(1-turn)] + ", press \"Done Answering\" when you're done!";
 	if (ins.in1.length !== 0) {
 		document.getElementById("level").textContent = "Level 1";
 		var index = ins.in1[Math.floor(Math.random() * ins.in1.length)];
@@ -85,5 +86,5 @@ window.onload = function() {
 	document.getElementById("level").textContent = "Level 1";
 	document.getElementById("players").textContent = players[0] + " x " + players[1];
 	document.getElementById("draw").disabled = false;
-	document.getElementById("turn").textContent = players[turn] + "\'s turn to ask!";
+	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 }
