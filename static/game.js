@@ -20,6 +20,11 @@ document.getElementById("done").onclick = function() {
 	turn = 1 - turn
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("turn").style.color = colors[turn]
+	if (ins.in3.length === 0) {
+		alert("Congratulations! You have finished all of the questions!");
+		document.getElementById("done").disabled = true;
+		document.getElementById("draw").disabled = true;
+	}
 }; 
 
 document.getElementById("draw").onclick = function() { 
@@ -47,7 +52,6 @@ document.getElementById("draw").onclick = function() {
 		document.getElementById("card_text").textContent = strings.level3[index];
 		ins.in3 = ins.in3.filter(item => item !== index);
 		if (ins.in3.length === 0) {
-			alert("Congratulations! You have finished all of the questions!");
 			document.getElementById("done").disabled = true;
 			document.getElementById("draw").disabled = true;
 		}
