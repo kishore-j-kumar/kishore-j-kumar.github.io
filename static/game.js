@@ -59,7 +59,8 @@ document.getElementById("skip").onclick = function() {
 	document.getElementById("done").style.background = "gray"; 
 	document.getElementById("draw").style.background = "#0275d8"; 
 	document.getElementById("draw").disabled = false;
-	document.getElementById("card_text").textContent = "Please draw a card, " + players[turn] + "!";
+	document.getElementById("asks").textContent = "Please draw a card, " + players[turn] + "!";
+	document.getElementById("card_text").textContent = "Draw a card!";
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("turn").style.color = colors[turn]
 }
@@ -73,7 +74,7 @@ document.getElementById("draw").onclick = function() {
 	document.getElementById("asks").textContent = players[turn] + " asks...";
 	document.getElementById("turn").style.color = colors[(1-turn)]
 	if (counter.set1 !== 0) {
-		document.getElementById("level").textContent = "Level 1 - Perception";
+		document.getElementById("level").textContent = "Level 1 of 3 - Perception";
 		var index = ins.in1[Math.floor(Math.random() * ins.in1.length)];
 		document.getElementById("card_text").textContent = strings.level1[index];
 		ins.in1 = ins.in1.filter(item => item !== index);
@@ -81,7 +82,7 @@ document.getElementById("draw").onclick = function() {
 		return;
 	}
 	if (counter.set2 !== 0) {
-		document.getElementById("level").textContent = "Level 2 - Connection";
+		document.getElementById("level").textContent = "Level 2 of 3 - Connection";
 		var index = ins.in2[Math.floor(Math.random() * ins.in2.length)];
 		document.getElementById("card_text").textContent = strings.level2[index];
 		ins.in2 = ins.in2.filter(item => item !== index);
@@ -89,7 +90,7 @@ document.getElementById("draw").onclick = function() {
 		return;
 	}
 	if (counter.set3 !== 0) {
-		document.getElementById("level").textContent = "Level 3 - Reflection";
+		document.getElementById("level").textContent = "Level 3 of 3 - Reflection";
 		var index = ins.in3[Math.floor(Math.random() * ins.in3.length)];
 		document.getElementById("card_text").textContent = strings.level3[index];
 		ins.in3 = ins.in3.filter(item => item !== index);
@@ -134,5 +135,6 @@ window.onload = function() {
 	document.getElementById("draw").disabled = false;
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("asks").textContent = players[turn] + " asks...";
+	document.getElementById("card_text").textContent = "Draw a card!";
 	document.getElementById("turn").style.color = colors[turn]
 }
