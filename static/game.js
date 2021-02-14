@@ -29,7 +29,7 @@ document.getElementById("done").onclick = function() {
 	turn = 1 - turn
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("turn").style.color = colors[turn]
-	document.getElementById("asks").textContent = "Please draw a card, " + players[turn] + " !";
+	document.getElementById("asks").textContent = "Please draw a card, " + players[turn] + "!";
 	if (counter.set2 === 0) {
 		document.getElementById("skip").disabled = true;
 	}
@@ -41,7 +41,7 @@ document.getElementById("done").onclick = function() {
 		document.getElementById("skip").style.background = "gray"; 
 		document.getElementById("asks").textContent = "Game Complete";
 		document.getElementById("card_text").textContent = "Game Complete";
-		document.getElementById("turn").textContent = "Game Complete";
+		document.getElementById("turn").textContent = "";
 		document.getElementById("level").textContent = "Game Complete";
 	}
 }; 
@@ -59,7 +59,7 @@ document.getElementById("skip").onclick = function() {
 	document.getElementById("done").style.background = "gray"; 
 	document.getElementById("draw").style.background = "#0275d8"; 
 	document.getElementById("draw").disabled = false;
-	document.getElementById("card_text").textContent = "Please draw a card, " + players[turn] + " !";
+	document.getElementById("card_text").textContent = "Please draw a card, " + players[turn] + "!";
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("turn").style.color = colors[turn]
 }
