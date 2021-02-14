@@ -89,7 +89,7 @@ window.onload = function() {
 	} 
 	var player_two = prompt("Please enter your partner's name", "");
 	if (player_two == null || player_two == "") {
-	 	player_one = "Player Two";
+	 	player_two = "Player Two";
 	}
 	players[0] = player_one;
 	players[1] = player_two;
