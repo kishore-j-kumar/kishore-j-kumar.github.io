@@ -17,7 +17,7 @@ document.getElementById("done").onclick = function() {
 	document.getElementById("done").disabled = true;
 	document.getElementById("draw").disabled = false;
 	var turn = (1-turn)
-	document.getElementById("turn").textContent = players[turn] + " turn to ask!";
+	document.getElementById("turn").textContent = players[turn] + "\'s turn to ask!";
 }; 
 
 document.getElementById("draw").onclick = function() { 
@@ -86,5 +86,5 @@ window.onload = function() {
 	document.getElementById("players").textContent = players[0] + " x " + players[1];
 	document.getElementById("done").disabled = false;
 	document.getElementById("draw").disabled = false;
-	document.getElementById("turn").textContent = players[turn] + " turn!";
+	document.getElementById("turn").textContent = players[turn] + "\'s turn to ask!";
 }
