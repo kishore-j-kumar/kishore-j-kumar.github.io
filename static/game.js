@@ -19,6 +19,7 @@ document.getElementById("done").onclick = function() {
 	document.getElementById("done").style.background = "gray"; 
 	document.getElementById("draw").style.background = "#0275d8"; 
 	document.getElementById("draw").disabled = false;
+	document.getElementById("card_text").textContent = "Draw a card!";
 	turn = 1 - turn
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("turn").style.color = colors[turn]
