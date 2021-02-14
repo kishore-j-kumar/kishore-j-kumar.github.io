@@ -43,9 +43,11 @@ document.getElementById("done").onclick = function() {
 document.getElementById("skip").onclick = function() {
 	if (counter.set1 !== 0) {
 		counter.set1 = 0;
+		document.getElementById("level").textContent = "Level 2 - Connection";
 	} else if (counter.set2 !== 0) {
-		counter.set1 = 0;
+		counter.set2 = 0;
 		document.getElementById("skip").disabled = true;
+		document.getElementById("level").textContent = "Level 3 - Reflection";
 	}
 	document.getElementById("done").disabled = true;
 	document.getElementById("done").style.background = "gray"; 
