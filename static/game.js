@@ -11,9 +11,9 @@ var ins = {
 }
 
 var counter = {
-	set1: 20,
-	set2: 20,
-	set3: 20
+	set1: 25,
+	set2: 25,
+	set3: 25
 }
 
 var players = ["Pl1", "Pl2"]
@@ -29,6 +29,10 @@ document.getElementById("done").onclick = function() {
 	turn = 1 - turn
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("turn").style.color = colors[turn]
+	document.getElementById("asks").textContent = "Please draw a card " + players[turn];
+	if (counter.set2 === 0) {
+		document.getElementById("skip").disabled = true;
+	}
 	if (counter.set3 === 0) {
 		alert("Congratulations! You have finished all of the questions!");
 		document.getElementById("done").disabled = true;
@@ -36,12 +40,29 @@ document.getElementById("done").onclick = function() {
 	}
 }; 
 
+document.getElementById("skip").onclick = function() {
+	if (counter.set1 !== 0) {
+		counter.set1 = 0;
+	} else if (counter.set2 !== 0) {
+		counter.set1 = 0;
+		document.getElementById("skip").disabled = true;
+	}
+	document.getElementById("done").disabled = true;
+	document.getElementById("done").style.background = "gray"; 
+	document.getElementById("draw").style.background = "#0275d8"; 
+	document.getElementById("draw").disabled = false;
+	document.getElementById("card_text").textContent = "Please draw a card " + players[turn];
+	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
+	document.getElementById("turn").style.color = colors[turn]
+}
+
 document.getElementById("draw").onclick = function() { 
 	document.getElementById("draw").disabled = true;
 	document.getElementById("draw").style.background = "gray"; 
 	document.getElementById("done").style.background = "#0275d8"; 
 	document.getElementById("done").disabled = false;
 	document.getElementById("turn").textContent = players[(1-turn)] + " answers for " + players[turn] + " now!";
+	document.getElementById("asks").textContent = players[turn] + " asks...";
 	document.getElementById("turn").style.color = colors[(1-turn)]
 	if (counter.set1 !== 0) {
 		document.getElementById("level").textContent = "Level 1 - Perception";
