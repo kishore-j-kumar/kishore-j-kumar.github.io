@@ -11,6 +11,7 @@ var ins = {
 }
 
 var players = ["Pl1", "Pl2"]
+var colors = ["blue", "red"]
 var turn = 1
 
 document.getElementById("done").onclick = function() { 
@@ -18,12 +19,14 @@ document.getElementById("done").onclick = function() {
 	document.getElementById("draw").disabled = false;
 	turn = 1 - turn
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
+	document.getElementById("turn").style.color = colors[turn]
 }; 
 
 document.getElementById("draw").onclick = function() { 
 	document.getElementById("draw").disabled = true;
 	document.getElementById("done").disabled = false;
 	document.getElementById("turn").textContent = players[(1-turn)] + ", press \"Done Answering\" when you're done!";
+	document.getElementById("turn").style.color = colors[(1-turn)]
 	if (ins.in1.length !== 0) {
 		document.getElementById("level").textContent = "Level 1";
 		var index = ins.in1[Math.floor(Math.random() * ins.in1.length)];
