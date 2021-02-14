@@ -34,7 +34,7 @@ document.getElementById("draw").onclick = function() {
 	document.getElementById("draw").style.background = "gray"; 
 	document.getElementById("done").style.background = "#0275d8"; 
 	document.getElementById("done").disabled = false;
-	document.getElementById("turn").textContent = players[(1-turn)] + ", press \"Done Answering\" when you're done!";
+	document.getElementById("turn").textContent = players[(1-turn)] + " answers now!";
 	document.getElementById("turn").style.color = colors[(1-turn)]
 	if (ins.in1.length !== 0) {
 		document.getElementById("level").textContent = "Level 1";
