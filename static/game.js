@@ -80,18 +80,17 @@ window.onload = function() {
   	});
   	var player_one = prompt("Please enter your name", "");
   	if (player_one == null || player_one == "") {
-	 	alert("Invalid name!");
-		location.reload(true);
+	 	player_one = "Player One";
 	} 
 	var player_two = prompt("Please enter your partner's name", "");
 	if (player_two == null || player_two == "") {
-	 	alert("Invalid name!");
-		location.reload(true);
+	 	player_one = "Player Two";
 	}
 	players[0] = player_one;
 	players[1] = player_two;
 	document.getElementById("level").textContent = "Level 1";
-	document.getElementById("players").textContent = players[0] + " x " + players[1];
+	document.getElementById("p1").textContent = players[0];
+	document.getElementById("p2").textContent = players[1];
 	document.getElementById("draw").disabled = false;
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("turn").style.color = colors[turn]
