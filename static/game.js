@@ -133,5 +133,6 @@ window.onload = function() {
 	document.getElementById("p2").textContent = players[1];
 	document.getElementById("draw").disabled = false;
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
+	document.getElementById("asks").textContent = players[turn] + " asks...";
 	document.getElementById("turn").style.color = colors[turn]
 }
