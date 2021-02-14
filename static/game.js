@@ -85,5 +85,5 @@ window.onload = function() {
 	document.getElementById("players").textContent = players[0] + " x " + players[1];
 	document.getElementById("done").disabled = false;
 	document.getElementById("draw").disabled = false;
-	document.getElementById("turn") = players[turn] + " turn!";
+	document.getElementById("turn").textContent = players[turn] + " turn!";
 }
