@@ -16,7 +16,7 @@ var turn = 1
 document.getElementById("done").onclick = function() { 
 	document.getElementById("done").disabled = true;
 	document.getElementById("draw").disabled = false;
-	var turn = (1 - turn)
+	turn = 1 - turn
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to ask!";
 }; 
 
