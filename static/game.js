@@ -78,12 +78,12 @@ window.onload = function() {
     	strings.level3 = data.split(/\r?\n/);
     	ins.in3 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
   	});
-  	var player_one = prompt("Please enter your name", "ex: Harry Potter");
+  	var player_one = prompt("Please enter your name", "");
   	if (player_one == null || player_one == "") {
 	 	alert("Invalid name!");
 		location.reload(true);
 	} 
-	var player_two = prompt("Please enter your partner's name", "ex: Harry Potter");
+	var player_two = prompt("Please enter your partner's name", "");
 	if (player_two == null || player_two == "") {
 	 	alert("Invalid name!");
 		location.reload(true);
