@@ -90,4 +90,5 @@ window.onload = function() {
 	document.getElementById("players").textContent = players[0] + " x " + players[1];
 	document.getElementById("draw").disabled = false;
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
+	document.getElementById("turn").style.color = colors[turn]
 }
