@@ -37,21 +37,21 @@ document.getElementById("draw").onclick = function() {
 	document.getElementById("turn").textContent = players[(1-turn)] + " answers now!";
 	document.getElementById("turn").style.color = colors[(1-turn)]
 	if (ins.in1.length !== 0) {
-		document.getElementById("level").textContent = "Level 1";
+		document.getElementById("level").textContent = "Level 1 - Perception";
 		var index = ins.in1[Math.floor(Math.random() * ins.in1.length)];
 		document.getElementById("card_text").textContent = strings.level1[index];
 		ins.in1 = ins.in1.filter(item => item !== index);
 		return;
 	}
 	if (ins.in2.length !== 0) {
-		document.getElementById("level").textContent = "Level 2";
+		document.getElementById("level").textContent = "Level 2 - Connection";
 		var index = ins.in2[Math.floor(Math.random() * ins.in2.length)];
 		document.getElementById("card_text").textContent = strings.level2[index];
 		ins.in2 = ins.in2.filter(item => item !== index);
 		return;
 	}
 	if (ins.in3.length !== 0) {
-		document.getElementById("level").textContent = "Level 3";
+		document.getElementById("level").textContent = "Level 3 - Reflection";
 		var index = ins.in3[Math.floor(Math.random() * ins.in3.length)];
 		document.getElementById("card_text").textContent = strings.level3[index];
 		ins.in3 = ins.in3.filter(item => item !== index);
