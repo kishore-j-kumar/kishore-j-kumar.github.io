@@ -16,6 +16,7 @@ var turn = 1
 
 document.getElementById("done").onclick = function() { 
 	document.getElementById("done").disabled = true;
+	document.getElementById("done").style.background = "gray"; 
 	document.getElementById("draw").disabled = false;
 	turn = 1 - turn
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
@@ -29,6 +30,7 @@ document.getElementById("done").onclick = function() {
 
 document.getElementById("draw").onclick = function() { 
 	document.getElementById("draw").disabled = true;
+	document.getElementById("draw").style.background = "gray"; 
 	document.getElementById("done").disabled = false;
 	document.getElementById("turn").textContent = players[(1-turn)] + ", press \"Done Answering\" when you're done!";
 	document.getElementById("turn").style.color = colors[(1-turn)]
@@ -92,6 +94,7 @@ window.onload = function() {
 	document.getElementById("p1").textContent = players[0];
 	document.getElementById("p2").textContent = players[1];
 	document.getElementById("draw").disabled = false;
+	document.getElementById("done").style.background = "gray";  
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("turn").style.color = colors[turn]
 }
