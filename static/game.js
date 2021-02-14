@@ -10,7 +10,7 @@ var ins = {
   in3: []
 }
 
-var players = ["P1", "P2"]
+var players = ["Pl1", "Pl2"]
 var turn = 1
 
 document.getElementById("done").onclick = function() { 
