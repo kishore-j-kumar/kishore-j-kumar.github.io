@@ -16,7 +16,7 @@ var turn = 1
 document.getElementById("done").onclick = function() { 
 	document.getElementById("done").disabled = true;
 	document.getElementById("draw").disabled = false;
-	var turn = (1-turn)
+	var turn = (1 - turn)
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to ask!";
 }; 
 
@@ -84,7 +84,6 @@ window.onload = function() {
 	players[1] = player_two;
 	document.getElementById("level").textContent = "Level 1";
 	document.getElementById("players").textContent = players[0] + " x " + players[1];
-	document.getElementById("done").disabled = false;
 	document.getElementById("draw").disabled = false;
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to ask!";
 }
