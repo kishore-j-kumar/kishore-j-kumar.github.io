@@ -129,7 +129,7 @@ window.onload = function() {
 	}
 	players[0] = player_one;
 	players[1] = player_two;
-	document.getElementById("level").textContent = "Level 1 of 3";
+	document.getElementById("level").textContent = "Level 1 of 3 - Perception";
 	document.getElementById("p1").textContent = players[0];
 	document.getElementById("p2").textContent = players[1];
 	document.getElementById("draw").disabled = false;
