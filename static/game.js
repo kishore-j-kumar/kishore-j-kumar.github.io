@@ -49,11 +49,11 @@ document.getElementById("done").onclick = function() {
 document.getElementById("skip").onclick = function() {
 	if (counter.set1 !== 0) {
 		counter.set1 = 0;
-		document.getElementById("level").textContent = "Level 2 - Connection";
+		document.getElementById("level").textContent = "Level 2 of 3 - Connection";
 	} else if (counter.set2 !== 0) {
 		counter.set2 = 0;
 		document.getElementById("skip").disabled = true;
-		document.getElementById("level").textContent = "Level 3 - Reflection";
+		document.getElementById("level").textContent = "Level 3 of 3 - Reflection";
 	}
 	document.getElementById("done").disabled = true;
 	document.getElementById("done").style.background = "gray"; 
@@ -129,12 +129,12 @@ window.onload = function() {
 	}
 	players[0] = player_one;
 	players[1] = player_two;
-	document.getElementById("level").textContent = "Level 1";
+	document.getElementById("level").textContent = "Level 1 of 3";
 	document.getElementById("p1").textContent = players[0];
 	document.getElementById("p2").textContent = players[1];
 	document.getElementById("draw").disabled = false;
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
-	document.getElementById("asks").textContent = players[turn] + " asks...";
+	document.getElementById("asks").textContent = "Please draw a card, " + players[turn] + "!";
 	document.getElementById("card_text").textContent = "Draw a card!";
 	document.getElementById("turn").style.color = colors[turn]
 }
