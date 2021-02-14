@@ -23,7 +23,7 @@ document.getElementById("done").onclick = function() {
 document.getElementById("draw").onclick = function() { 
 	document.getElementById("draw").disabled = true;
 	document.getElementById("done").disabled = false;
-	document.getElementById("turn") = players[(1-turn)] + ", press \"Done Answering\" when you're done!";
+	document.getElementById("turn").textContent = players[(1-turn)] + ", press \"Done Answering\" when you're done!";
 	if (ins.in1.length !== 0) {
 		document.getElementById("level").textContent = "Level 1";
 		var index = ins.in1[Math.floor(Math.random() * ins.in1.length)];
