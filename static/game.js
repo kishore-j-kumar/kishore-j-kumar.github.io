@@ -55,11 +55,6 @@ document.getElementById("draw").onclick = function() {
 		var index = ins.in3[Math.floor(Math.random() * ins.in3.length)];
 		document.getElementById("card_text").textContent = strings.level3[index];
 		ins.in3 = ins.in3.filter(item => item !== index);
-		if (ins.in3.length === 0) {
-			alert("Congratulations! You have finished all of the questions!");
-			document.getElementById("done").disabled = true;
-			document.getElementById("draw").disabled = true;
-		}
 		return;
 	}
 	alert("Congratulations! You have finished all of the questions!");
