@@ -11,9 +11,9 @@ var ins = {
 }
 
 var counter = {
-	set1: 25,
-	set2: 25,
-	set3: 25
+	set1: 0,
+	set2: 0,
+	set3: 0
 }
 
 var players = ["Pl1", "Pl2"]
@@ -50,10 +50,12 @@ document.getElementById("skip").onclick = function() {
 	if (counter.set1 !== 0) {
 		counter.set1 = 0;
 		document.getElementById("level").textContent = "Level 2 of 3 - Connection";
+		document.getElementById("cardsleft").textContent = counter.set2 + " cards left in Level 2!";
 	} else if (counter.set2 !== 0) {
 		counter.set2 = 0;
 		document.getElementById("skip").disabled = true;
 		document.getElementById("level").textContent = "Level 3 of 3 - Reflection";
+		document.getElementById("cardsleft").textContent = counter.set3 + " cards left in Level 3!";
 	}
 	document.getElementById("done").disabled = true;
 	document.getElementById("done").style.background = "gray"; 
@@ -75,6 +77,7 @@ document.getElementById("draw").onclick = function() {
 	document.getElementById("turn").style.color = colors[(1-turn)]
 	if (counter.set1 !== 0) {
 		document.getElementById("level").textContent = "Level 1 of 3 - Perception";
+		document.getElementById("cardsleft").textContent = counter.set1 + " cards left in Level 1!";
 		var index = ins.in1[Math.floor(Math.random() * ins.in1.length)];
 		document.getElementById("card_text").textContent = strings.level1[index];
 		ins.in1 = ins.in1.filter(item => item !== index);
@@ -83,6 +86,7 @@ document.getElementById("draw").onclick = function() {
 	}
 	if (counter.set2 !== 0) {
 		document.getElementById("level").textContent = "Level 2 of 3 - Connection";
+		document.getElementById("cardsleft").textContent = counter.set2 + " cards left in Level 2!";
 		var index = ins.in2[Math.floor(Math.random() * ins.in2.length)];
 		document.getElementById("card_text").textContent = strings.level2[index];
 		ins.in2 = ins.in2.filter(item => item !== index);
@@ -91,6 +95,7 @@ document.getElementById("draw").onclick = function() {
 	}
 	if (counter.set3 !== 0) {
 		document.getElementById("level").textContent = "Level 3 of 3 - Reflection";
+		document.getElementById("cardsleft").textContent = counter.set3 + " cards left in Level 3!";
 		var index = ins.in3[Math.floor(Math.random() * ins.in3.length)];
 		document.getElementById("card_text").textContent = strings.level3[index];
 		ins.in3 = ins.in3.filter(item => item !== index);
@@ -108,16 +113,19 @@ window.onload = function() {
 	jQuery.get('./assets/level1.txt', function(data) {
     	strings.level1 = data.split(/\r?\n/);
 		ins.in1 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
+		counter.set1 = len(strings.level1);
   	});
 
   	jQuery.get('./assets/level2.txt', function(data) {
     	strings.level2 = data.split(/\r?\n/);
     	ins.in2 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
+    	counter.set2 = len(strings.level2);
   	});
 
   	jQuery.get('./assets/level3.txt', function(data) {
     	strings.level3 = data.split(/\r?\n/);
     	ins.in3 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
+    	counter.set3 = len(strings.level3);
   	});
   	var player_one = prompt("Please enter your name", "");
   	if (player_one == null || player_one == "") {
@@ -130,6 +138,7 @@ window.onload = function() {
 	players[0] = player_one;
 	players[1] = player_two;
 	document.getElementById("level").textContent = "Level 1 of 3 - Perception";
+	document.getElementById("cardsleft").textContent = counter.set1 + " cards left in Level 1!";
 	document.getElementById("p1").textContent = players[0];
 	document.getElementById("p2").textContent = players[1];
 	document.getElementById("draw").disabled = false;
