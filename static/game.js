@@ -115,20 +115,23 @@ window.onload = function() {
     	strings.level1.filter(Boolean);
 		ins.in1 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
 		counter.set1 = strings.level1.length;
-  	});
-	document.getElementById("cardsleft").textContent = counter.set1 + " cards left in Level 1!";
+		document.getElementById("cardsleft").textContent = counter.set1 + " cards left in Level 1!";
+		console.log(strings.level1);
+
+  	});	
   	jQuery.get('./assets/level2.txt', function(data) {
     	strings.level2 = data.split(/\r?\n/);
     	strings.level2.filter(Boolean);
     	ins.in2 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
     	counter.set2 = strings.level2.length;
+    	console.log(strings.level2);
   	});
-
   	jQuery.get('./assets/level3.txt', function(data) {
     	strings.level3 = data.split(/\r?\n/);
     	strings.level3.filter(Boolean);
     	ins.in3 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
     	counter.set3 = strings.level3.length;
+    	console.log(strings.level3);
   	});
   	var player_one = prompt("Please enter your name", "");
   	if (player_one == null || player_one == "") {
@@ -138,9 +141,6 @@ window.onload = function() {
 	if (player_two == null || player_two == "") {
 	 	player_two = "Player Two";
 	}
-	console.log(strings.level1);
-	console.log(strings.level2);
-	console.log(strings.level3);
 	players[0] = player_one;
 	players[1] = player_two;
 	document.getElementById("level").textContent = "Level 1 of 3 - Perception";
