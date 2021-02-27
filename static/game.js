@@ -112,20 +112,23 @@ window.onload = function() {
 	document.getElementById("draw").disabled = true;
 	jQuery.get('./assets/level1.txt', function(data) {
     	strings.level1 = data.split(/\r?\n/);
+    	strings.level1.filter(Boolean);
 		ins.in1 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
-		counter.set1 = len(strings.level1);
+		counter.set1 = strings.level1.length;
   	});
 
   	jQuery.get('./assets/level2.txt', function(data) {
     	strings.level2 = data.split(/\r?\n/);
+    	strings.level2.filter(Boolean);
     	ins.in2 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
-    	counter.set2 = len(strings.level2);
+    	counter.set2 = strings.level2.length;
   	});
 
   	jQuery.get('./assets/level3.txt', function(data) {
     	strings.level3 = data.split(/\r?\n/);
+    	strings.level3.filter(Boolean);
     	ins.in3 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
-    	counter.set3 = len(strings.level3);
+    	counter.set3 = strings.level3.length;
   	});
   	var player_one = prompt("Please enter your name", "");
   	if (player_one == null || player_one == "") {
