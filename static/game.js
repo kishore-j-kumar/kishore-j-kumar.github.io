@@ -34,6 +34,7 @@ document.getElementById("done").onclick = function() {
 		document.getElementById("skip").disabled = true;
 	}
 	if (counter.set3 === 0) {
+		document.getElementById("cardsleft").textContent = counter.set3 + " cards left in Level 3!";
 		alert("Congratulations! You have finished all of the questions!");
 		document.getElementById("done").disabled = true;
 		document.getElementById("draw").disabled = true;
