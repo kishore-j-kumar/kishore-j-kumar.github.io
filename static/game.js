@@ -122,14 +122,14 @@ window.onload = function() {
   	jQuery.get('./assets/level2.txt', function(data) {
     	strings.level2 = data.split(/\r?\n/);
     	strings.level2.filter(Boolean);
-    	ins.in2 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
+    	ins.in2 = Array.apply(null, {length: strings.level2.length}).map(Number.call, Number);
     	counter.set2 = strings.level2.length;
     	console.log(strings.level2);
   	});
   	jQuery.get('./assets/level3.txt', function(data) {
     	strings.level3 = data.split(/\r?\n/);
     	strings.level3.filter(Boolean);
-    	ins.in3 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
+    	ins.in3 = Array.apply(null, {length: strings.level2.length}).map(Number.call, Number);
     	counter.set3 = strings.level3.length;
     	console.log(strings.level3);
   	});
