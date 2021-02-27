@@ -116,7 +116,7 @@ window.onload = function() {
 		ins.in1 = Array.apply(null, {length: strings.level1.length}).map(Number.call, Number);
 		counter.set1 = strings.level1.length;
   	});
-
+	document.getElementById("cardsleft").textContent = counter.set1 + " cards left in Level 1!";
   	jQuery.get('./assets/level2.txt', function(data) {
     	strings.level2 = data.split(/\r?\n/);
     	strings.level2.filter(Boolean);
@@ -141,7 +141,6 @@ window.onload = function() {
 	players[0] = player_one;
 	players[1] = player_two;
 	document.getElementById("level").textContent = "Level 1 of 3 - Perception";
-	document.getElementById("cardsleft").textContent = counter.set1 + " cards left in Level 1!";
 	document.getElementById("p1").textContent = players[0];
 	document.getElementById("p2").textContent = players[1];
 	document.getElementById("draw").disabled = false;
