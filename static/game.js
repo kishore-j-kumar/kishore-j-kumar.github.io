@@ -78,7 +78,7 @@ document.getElementById("draw").onclick = function() {
 	document.getElementById("turn").style.color = colors[(1-turn)]
 	if (counter.set1 !== 0) {
 		document.getElementById("level").textContent = "Level 1 of 3 - Perception";
-		document.getElementById("cardsleft").textContent = counter.set1 + " cards left in Level 1!";
+		document.getElementById("cardsleft").textContent = counter.set1 - 1 + " cards left in Level 1!";
 		var index = ins.in1[Math.floor(Math.random() * ins.in1.length)];
 		document.getElementById("card_text").textContent = strings.level1[index];
 		ins.in1 = ins.in1.filter(item => item !== index);
@@ -87,7 +87,7 @@ document.getElementById("draw").onclick = function() {
 	}
 	if (counter.set2 !== 0) {
 		document.getElementById("level").textContent = "Level 2 of 3 - Connection";
-		document.getElementById("cardsleft").textContent = counter.set2 + " cards left in Level 2!";
+		document.getElementById("cardsleft").textContent = counter.set2 - 1 + " cards left in Level 2!";
 		var index = ins.in2[Math.floor(Math.random() * ins.in2.length)];
 		document.getElementById("card_text").textContent = strings.level2[index];
 		ins.in2 = ins.in2.filter(item => item !== index);
@@ -96,7 +96,7 @@ document.getElementById("draw").onclick = function() {
 	}
 	if (counter.set3 !== 0) {
 		document.getElementById("level").textContent = "Level 3 of 3 - Reflection";
-		document.getElementById("cardsleft").textContent = counter.set3 + " cards left in Level 3!";
+		document.getElementById("cardsleft").textContent = counter.set3 - 1 + " cards left in Level 3!";
 		var index = ins.in3[Math.floor(Math.random() * ins.in3.length)];
 		document.getElementById("card_text").textContent = strings.level3[index];
 		ins.in3 = ins.in3.filter(item => item !== index);
