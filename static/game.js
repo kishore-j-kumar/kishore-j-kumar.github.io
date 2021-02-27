@@ -138,6 +138,9 @@ window.onload = function() {
 	if (player_two == null || player_two == "") {
 	 	player_two = "Player Two";
 	}
+	console.log(strings.level1);
+	console.log(strings.level2);
+	console.log(strings.level3);
 	players[0] = player_one;
 	players[1] = player_two;
 	document.getElementById("level").textContent = "Level 1 of 3 - Perception";
