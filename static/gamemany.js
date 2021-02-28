@@ -18,8 +18,11 @@ var counter = {
 
 var colors = ["blue", "red"]
 var turn = 1
+var prev_card = ""
+
 
 document.getElementById("done").onclick = function() { 
+	document.getElementById("redraw").disabled = true;
 	document.getElementById("done").disabled = true;
 	document.getElementById("done").style.background = "gray"; 
 	document.getElementById("draw").style.background = "#0275d8"; 
@@ -43,6 +46,10 @@ document.getElementById("done").onclick = function() {
 	}
 }; 
 
+document.getElementById("redraw").onclick = function() {
+	alert(prev_card);
+};
+
 document.getElementById("skip").onclick = function() {
 	if (counter.set1 !== 0) {
 		counter.set1 = 0;
@@ -59,7 +66,7 @@ document.getElementById("skip").onclick = function() {
 	document.getElementById("draw").style.background = "#0275d8"; 
 	document.getElementById("draw").disabled = false;
 	document.getElementById("card_text").textContent = "Draw a card!";
-}
+};
 
 document.getElementById("draw").onclick = function() { 
 	document.getElementById("draw").disabled = true;
@@ -124,7 +131,7 @@ window.onload = function() {
     	counter.set3 = strings.level3.length;
     	console.log(strings.level3);
   	});
-
+	document.getElementById("redraw").disabled = true;
 	document.getElementById("level").textContent = "Level 1 of 3 - Perception";
 	document.getElementById("draw").disabled = false;
 	document.getElementById("card_text").textContent = "Draw a card!";

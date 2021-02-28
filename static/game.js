@@ -19,8 +19,10 @@ var counter = {
 var players = ["Pl1", "Pl2"]
 var colors = ["blue", "red"]
 var turn = 1
+var prev_card = ""
 
 document.getElementById("done").onclick = function() { 
+	document.getElementById("redraw").disabled = true;
 	document.getElementById("done").disabled = true;
 	document.getElementById("done").style.background = "gray"; 
 	document.getElementById("draw").style.background = "#0275d8"; 
@@ -66,7 +68,11 @@ document.getElementById("skip").onclick = function() {
 	document.getElementById("card_text").textContent = "Draw a card!";
 	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
 	document.getElementById("turn").style.color = colors[turn]
-}
+};
+
+document.getElementById("redraw").onclick = function() {
+	alert(prev_card);
+};
 
 document.getElementById("draw").onclick = function() { 
 	document.getElementById("draw").disabled = true;
@@ -83,6 +89,7 @@ document.getElementById("draw").onclick = function() {
 		document.getElementById("card_text").textContent = strings.level1[index];
 		ins.in1 = ins.in1.filter(item => item !== index);
 		counter.set1 -= 1;
+		prev_card = document.getElementById("card_text").textContent;
 		return;
 	}
 	if (counter.set2 !== 0) {
@@ -92,6 +99,7 @@ document.getElementById("draw").onclick = function() {
 		document.getElementById("card_text").textContent = strings.level2[index];
 		ins.in2 = ins.in2.filter(item => item !== index);
 		counter.set2 -= 1;
+		prev_card = document.getElementById("card_text").textContent;
 		return;
 	}
 	if (counter.set3 !== 0) {
@@ -100,6 +108,7 @@ document.getElementById("draw").onclick = function() {
 		var index = ins.in3[Math.floor(Math.random() * ins.in3.length)];
 		document.getElementById("card_text").textContent = strings.level3[index];
 		ins.in3 = ins.in3.filter(item => item !== index);
+		prev_card = document.getElementById("card_text").textContent;
 		counter.set3 -= 1;
 		return;
 	}
@@ -144,6 +153,7 @@ window.onload = function() {
 	}
 	players[0] = player_one;
 	players[1] = player_two;
+	document.getElementById("redraw").disabled = true;
 	document.getElementById("level").textContent = "Level 1 of 3 - Perception";
 	document.getElementById("p1").textContent = players[0];
 	document.getElementById("p2").textContent = players[1];
