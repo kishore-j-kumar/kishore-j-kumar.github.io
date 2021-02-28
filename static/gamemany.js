@@ -16,7 +16,6 @@ var counter = {
 	set3: 0
 }
 
-var players = ["Pl1", "Pl2"]
 var colors = ["blue", "red"]
 var turn = 1
 
@@ -27,9 +26,6 @@ document.getElementById("done").onclick = function() {
 	document.getElementById("draw").disabled = false;
 	document.getElementById("card_text").textContent = "Draw a card!";
 	turn = 1 - turn
-	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
-	document.getElementById("turn").style.color = colors[turn]
-	document.getElementById("asks").textContent = "Please draw a card, " + players[turn] + "!";
 	if (counter.set2 === 0) {
 		document.getElementById("skip").disabled = true;
 	}
@@ -62,10 +58,7 @@ document.getElementById("skip").onclick = function() {
 	document.getElementById("done").style.background = "gray"; 
 	document.getElementById("draw").style.background = "#0275d8"; 
 	document.getElementById("draw").disabled = false;
-	document.getElementById("asks").textContent = "Please draw a card, " + players[turn] + "!";
 	document.getElementById("card_text").textContent = "Draw a card!";
-	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
-	document.getElementById("turn").style.color = colors[turn]
 }
 
 document.getElementById("draw").onclick = function() { 
@@ -73,9 +66,6 @@ document.getElementById("draw").onclick = function() {
 	document.getElementById("draw").style.background = "gray"; 
 	document.getElementById("done").style.background = "#0275d8"; 
 	document.getElementById("done").disabled = false;
-	document.getElementById("turn").textContent = players[(1-turn)] + " answers for " + players[turn] + " now!";
-	document.getElementById("asks").textContent = players[turn] + " asks...";
-	document.getElementById("turn").style.color = colors[(1-turn)]
 	if (counter.set1 !== 0) {
 		document.getElementById("level").textContent = "Level 1 of 3 - Perception";
 		document.getElementById("cardsleft").textContent = counter.set1 - 1 + " cards left in Level 1!";
@@ -134,22 +124,8 @@ window.onload = function() {
     	counter.set3 = strings.level3.length;
     	console.log(strings.level3);
   	});
-  	var player_one = prompt("Please enter your name", "");
-  	if (player_one == null || player_one == "") {
-	 	player_one = "Player One";
-	} 
-	var player_two = prompt("Please enter your partner's name", "");
-	if (player_two == null || player_two == "") {
-	 	player_two = "Player Two";
-	}
-	players[0] = player_one;
-	players[1] = player_two;
+
 	document.getElementById("level").textContent = "Level 1 of 3 - Perception";
-	document.getElementById("p1").textContent = players[0];
-	document.getElementById("p2").textContent = players[1];
 	document.getElementById("draw").disabled = false;
-	document.getElementById("turn").textContent = players[turn] + "\'s turn to draw/ask!";
-	document.getElementById("asks").textContent = "Please draw a card, " + players[turn] + "!";
 	document.getElementById("card_text").textContent = "Draw a card!";
-	document.getElementById("turn").style.color = colors[turn]
 }
