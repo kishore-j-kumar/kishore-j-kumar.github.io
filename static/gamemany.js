@@ -80,6 +80,7 @@ document.getElementById("draw").onclick = function() {
 		document.getElementById("card_text").textContent = strings.level1[index];
 		ins.in1 = ins.in1.filter(item => item !== index);
 		counter.set1 -= 1;
+		prev_card = document.getElementById("card_text").textContent;
 		return;
 	}
 	if (counter.set2 !== 0) {
@@ -89,6 +90,7 @@ document.getElementById("draw").onclick = function() {
 		document.getElementById("card_text").textContent = strings.level2[index];
 		ins.in2 = ins.in2.filter(item => item !== index);
 		counter.set2 -= 1;
+		prev_card = document.getElementById("card_text").textContent;
 		return;
 	}
 	if (counter.set3 !== 0) {
@@ -98,6 +100,7 @@ document.getElementById("draw").onclick = function() {
 		document.getElementById("card_text").textContent = strings.level3[index];
 		ins.in3 = ins.in3.filter(item => item !== index);
 		counter.set3 -= 1;
+		prev_card = document.getElementById("card_text").textContent;
 		return;
 	}
 	alert("Congratulations! You have finished all of the questions!");
