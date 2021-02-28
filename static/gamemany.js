@@ -22,7 +22,7 @@ var prev_card = ""
 
 
 document.getElementById("done").onclick = function() { 
-	document.getElementById("redraw").disabled = true;
+	document.getElementById("redraw").disabled = false;
 	document.getElementById("done").disabled = true;
 	document.getElementById("done").style.background = "gray"; 
 	document.getElementById("draw").style.background = "#0275d8"; 
